@@ -24,11 +24,22 @@ def manage_student_database():
         
         
     total_number_of_students = len(stu_data)
-    print(f"Total number of students: {total_number_of_students}")
+    print(f"\nTotal number of students: {total_number_of_students}")
     
+    name_length = 0
+    for i in stu_data:
+        name_length += len(i[1])
+
+    print(f"Total length of all student names combined: {name_length}")
+
+    strings = [item[1] for item in stu_data]
+    length_of_longest_string = max(strings, key=len)
+    length_of_short_string = min(strings, key=len)
+
+    print(f"The student with the longest name is: {length_of_longest_string}")
+    print(f"The student with the shortest name is: {length_of_short_string}")
     # return stu_data  
 
 
 students = manage_student_database()
-print(students)
-
+# print(students)
